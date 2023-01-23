@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { useFetchProductQuery } from "../features/products/product-api-slice";
+import { useFetchSingleProductQuery } from "../features/products/product-api-slice";
 import Error from "../pages/Error";
 import { Grid, Paper, Box, Typography, Rating, Container } from "@mui/material";
 import Image from "mui-image";
@@ -13,7 +13,7 @@ export default function Product() {
     isFetching,
     isError,
     isSuccess,
-  } = useFetchProductQuery(productId);
+  } = useFetchSingleProductQuery(productId);
 
   function capitalizeCategory(categor) {
     return categor[0].toUpperCase() + categor.slice(1);

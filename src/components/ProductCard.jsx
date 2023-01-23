@@ -10,19 +10,20 @@ export default function ProductCard({ product }) {
   return (
     <>
       <Link to={`product/${product.id}`} style={{ textDecoration: "none" }}>
-        <Card sx={{ maxWidth: 345, minHeight: 300 }}>
+        <Card sx={{ maxWidth: 345, minHeight: 300 }} variant="outlined">
           <CardActionArea>
             <Box
               sx={{
-                height: 250,
-                width: 350,
+                height: 275,
+                width: 325,
+                marginTop:"8px"
               }}
             >
               <Image src={product.image} fit="contain" duration={325} />
             </Box>
 
             <CardContent>
-              <Typography noWrap variant="h5" component="div" color="#301e67">
+              <Typography noWrap variant="h5" component="div" align="center" color="#301e67">
                 {product.title}
               </Typography>
               <Typography variant="h5" align="center" color="#FF6000">

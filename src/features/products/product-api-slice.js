@@ -2,20 +2,19 @@ import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react"
 
 const BASE_URL="https://fakestoreapi.com/products";
 
-
-export const apiSlice=createApi({
-    reducerPath:"api",
+export const storeApiSlice=createApi({
+    reducerPath:"store-api",
     baseQuery:fetchBaseQuery({
         baseUrl:BASE_URL
     }),
     endpoints(builder){
         return {
-            fetchProducts:builder.query({
+            fetchAllProducts:builder.query({
                 query(limit){
                     return `?limit=${limit}`
                 }
             }),
-            fetchProduct:builder.query({
+            fetchSingleProduct:builder.query({
                 query(id){
                     return `/${id}`
                 }
@@ -24,5 +23,4 @@ export const apiSlice=createApi({
     }
 })
 
-
-export const { useFetchProductsQuery,useFetchProductQuery } = apiSlice
+export const { useFetchAllProductsQuery,useFetchSingleProductQuery } = storeApiSlice
