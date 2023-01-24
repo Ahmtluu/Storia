@@ -4,6 +4,7 @@ import App from "./App";
 import { store } from "./store";
 import { Provider } from "react-redux";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
+import "animate.css/animate.min.css";
 
 const customTheme = createTheme({
   typography: {

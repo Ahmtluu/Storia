@@ -6,11 +6,13 @@ import { CardActionArea, Box } from "@mui/material";
 import Image from "mui-image";
 import { Link } from "react-router-dom";
 
+
 export default function ProductCard({ product }) {
   return (
     <>
+    
       <Link to={`product/${product.id}`} style={{ textDecoration: "none" }}>
-        <Card sx={{ maxWidth: 345, minHeight: 300 }} variant="outlined">
+        <Card sx={{ maxWidth: 350, minHeight: 300 }} variant="outlined">
           <CardActionArea>
             <Box
               sx={{
@@ -33,6 +35,7 @@ export default function ProductCard({ product }) {
           </CardActionArea>
         </Card>
       </Link>
+     
     </>
   );
 }

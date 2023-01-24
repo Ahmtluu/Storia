@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useFetchSingleProductQuery } from "../features/products/product-api-slice";
 import Error from "../pages/Error";
-import { Grid, Paper, Box, Typography, Rating, Container } from "@mui/material";
+import { Grid, Box, Typography, Rating, Container } from "@mui/material";
 import Image from "mui-image";
 import ClipLoader from "react-spinners/ClipLoader";
 
@@ -20,6 +20,7 @@ export default function Product() {
   }
 
   return isFetching ? (
+    /* Loading */
     <Box
       display="flex"
       alignItems="center"
@@ -32,6 +33,7 @@ export default function Product() {
   ) : data ? (
     <Box sx={{ flexGrow: 1, marginTop: 9 }}>
       <Grid container spacing={0}>
+        {/*Product image */}
         <Grid
           container
           item
@@ -49,6 +51,7 @@ export default function Product() {
             <Image src={data.image} fit="contain" duration={175} />
           </Box>
         </Grid>
+        {/* Product details */}
         <Grid container item md={8} display="flex" alignItems="center">
           <Container>
             <Typography variant="h3">{data.title}</Typography>
@@ -56,12 +59,14 @@ export default function Product() {
               {capitalizeCategory(data.category)}
             </Typography>
             <Grid container>
+              {/* Price */}
               <Grid item md={6}>
                 {" "}
                 <Typography variant="h3" mt={2} style={{ color: "#301E67" }}>
                   ${data.price}
                 </Typography>
               </Grid>
+                {/* Rate */}
               <Grid
                 container
                 item
@@ -85,6 +90,7 @@ export default function Product() {
                 </Grid>
               </Grid>
             </Grid>
+              {/* Description */}
             <Typography mt={2} variant="body1">
               {data.description}
             </Typography>
@@ -93,6 +99,7 @@ export default function Product() {
       </Grid>
     </Box>
   ) : (
+    /*If wanted product doesn't find, show Error component */
     <Error />
   );
 }

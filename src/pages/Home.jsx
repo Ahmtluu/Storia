@@ -5,6 +5,7 @@ import ProductCard from "../components/ProductCard";
 import Image from "mui-image";
 import ClipLoader from "react-spinners/ClipLoader";
 import homeImage from "../assets/images/homeImage.svg";
+import { AnimationOnScroll } from 'react-animation-on-scroll';
 
 export default function HomePage() {
   /*const limit = 6;*/
@@ -12,7 +13,8 @@ export default function HomePage() {
 
   return (
     <>
-      <Box height={400} mt={9} display="flex">
+     {/* Jumbotron */}
+      <Box height="50vh" mt={9} display="flex">
         <Grid container direction="row" height="inherit">
           <Grid
             container
@@ -50,6 +52,8 @@ export default function HomePage() {
           </Grid>
         </Grid>
       </Box>
+
+      {/* Product List */}
       <Container>
         <Box mt={4} mb={2}>
           <Typography variant="h5" color="#301e67">
@@ -65,6 +69,7 @@ export default function HomePage() {
         <Container>
           <Grid container spacing={2}>
             {data.map((product, key) => (
+              /* Product Single Component */
               <Grid item md={4} lg={4} key={key}>
                 <ProductCard product={product} />
               </Grid>

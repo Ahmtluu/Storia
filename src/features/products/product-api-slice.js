@@ -1,6 +1,6 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react"
 
-const BASE_URL="https://fakestoreapi.com/products";
+const BASE_URL="https://fakestoreapi.com/";
 
 export const storeApiSlice=createApi({
     reducerPath:"store-api",
@@ -11,12 +11,12 @@ export const storeApiSlice=createApi({
         return {
             fetchAllProducts:builder.query({
                 query(limit){
-                    return `?limit=${limit}`
+                    return `products?limit=${limit}`
                 }
             }),
             fetchSingleProduct:builder.query({
                 query(id){
-                    return `/${id}`
+                    return `products/${id}`
                 }
             })
         }
