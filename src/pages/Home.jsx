@@ -2,14 +2,14 @@ import React from "react";
 import { useFetchAllProductsQuery } from "../features/products/product-api-slice";
 import { Container, Grid, Box, Typography } from "@mui/material";
 import ProductCard from "../components/ProductCard";
-import Image from "mui-image";
 import ClipLoader from "react-spinners/ClipLoader";
 import homeImage from "../assets/images/homeImage.svg";
-import { AnimationOnScroll } from 'react-animation-on-scroll';
+
 
 export default function HomePage() {
+  /*If you want to limit fetched data, just declare a limit variable and set it as parameter */
   /*const limit = 6;*/
-  const { data = [], isFetching, isLoading } = useFetchAllProductsQuery();
+  const { data = [] /* array for null safety */, isFetching, isLoading } = useFetchAllProductsQuery(/*limit */);
 
   return (
     <>
@@ -69,7 +69,7 @@ export default function HomePage() {
         <Container>
           <Grid container spacing={2}>
             {data.map((product, key) => (
-              /* Product Single Component */
+              /* Single Product Component */
               <Grid item md={4} lg={4} key={key}>
                 <ProductCard product={product} />
               </Grid>
