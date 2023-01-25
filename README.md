@@ -20,3 +20,9 @@
 <div>
 <code>npm run dev</code>
 </div>
+
+### Screenshots
+
+ <img src="https://user-images.githubusercontent.com/62503851/214549296-2eedcbcc-8fac-4ca6-ba47-5c192b5bb99a.png"  alt="screenshot-home" width="750" height="425"/>
+  <img src="https://user-images.githubusercontent.com/62503851/214549684-1ee1f4b8-b211-490e-8584-d4a16c7f7439.png" alt="screenshot-propduct" width="750" height="425"/>
+   <img src="https://user-images.githubusercontent.com/62503851/214549341-763cfeca-a974-4e3b-af3f-64a9fbfd8768.png"  alt="screenshot-productDetail" width="750" height="425"/>
