@@ -11,8 +11,8 @@
 
 ### Installation
 <div>
-<code>git clone https://github.com/Ahmtluu/Storia</code>
-<code>cd Storia</code>
+<code>git clone https://github.com/Ahmtluu/Storia</code> <br>
+<code>cd Storia</code><br>
 <code>yarn install</code>
 </div>
 
